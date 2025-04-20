@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medic_care_gps/data/menu_items.dart';
+import 'package:medic_care_gps/models/menu_item.dart';
 
 class MedicareGPS extends StatelessWidget{
 
@@ -79,6 +81,13 @@ Widget build(BuildContext context) => Scaffold(
   appBar: AppBar(
     title: const Text('Medic Care Indoor GPS'),
     centerTitle: true,
+    actions: [
+      PopupMenuButton<MenuItem>(
+        itemBuilder: (context) =>[
+          ...MenuItems.itemsFirst.map(buildItem).toList(),
+        ],
+      ),
+    ],
   ),
   body: Container( //* Setting background image
     alignment: Alignment.center, 
@@ -140,4 +149,7 @@ Widget build(BuildContext context) => Scaffold(
       )
       )
       );
+PopupMenuItem<MenuItem>buildItem(MenuItem item) => PopupMenuItem(
+  child: Text(item.text),
+  );
 }  

@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:medic_care_gps/models/setting_icon.dart';
+import 'package:medic_care_gps/models/menu_item.dart';
 
 
 //* Initializing Icons
-class MenuItems{
+class MenuItems{  
+  //* List of Items to choose from 
+  static const List<MenuItem> itemsFirst = [
+    itemSettings, 
+    itemDelete,
+  ];
+  static const List<MenuItem> itemSecond = [
+    itemSignOut,
+  ];
 
   //* settings
   static const itemSettings = MenuItem(
