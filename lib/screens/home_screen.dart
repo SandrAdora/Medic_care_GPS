@@ -94,7 +94,7 @@ Widget build(BuildContext context) => Scaffold(
     padding: const EdgeInsets.all(32), 
     decoration: const BoxDecoration(
       image: DecorationImage(
-        image: NetworkImage('https://img.freepik.com/fotos-premium/corazon-rojo-latidos-cardiacos-o-frecuencia-cardiaca-estetoscopio-sobre-fondo-madera-azul-espacio-copia-atencion-medica-sanitaria_73899-5134.jpg'),
+        image: AssetImage('assets/images/background_homepage.jpg'),
         fit: BoxFit.cover,
       )
       ),
