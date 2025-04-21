@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medic_care_gps/data/menu_items.dart';
-import 'package:medic_care_gps/models/menu_item.dart';
 
 class MedicareGPS extends StatelessWidget{
 
@@ -81,23 +79,13 @@ Widget build(BuildContext context) => Scaffold(
   appBar: AppBar(
     title: const Text('Medic Care Indoor GPS'),
     centerTitle: true,
-    actions: [
-      PopupMenuButton<MenuItem>(
-      itemBuilder: (context) =>[
-        ...MenuItems.itemsFirst.map(buildItem).toList(),
-      ],
-    ),
-  ],
-
   ),
   body: Container( //* Setting background image
     alignment: Alignment.center, 
     padding: const EdgeInsets.all(32), 
     decoration: const BoxDecoration(
       image: DecorationImage(
-        image: NetworkImage(
-          'https://i0.wp.com/www.aftvnews.com/wp-content/uploads/2015/04/wallpaper-material.png?w=1292&quality=100&ssl=1'
-          ),
+        image: NetworkImage('https://img.freepik.com/fotos-premium/corazon-rojo-latidos-cardiacos-o-frecuencia-cardiaca-estetoscopio-sobre-fondo-madera-azul-espacio-copia-atencion-medica-sanitaria_73899-5134.jpg'),
         fit: BoxFit.cover,
       )
       ),
@@ -106,12 +94,7 @@ Widget build(BuildContext context) => Scaffold(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              ' Welcome to Medic Care GPS', 
-              style: TextStyle(fontSize: 20.0),
-
-
-            ),
+            Text(' Welcome to Medic Care GPS Mobile'),
             AnimatedBuilder(
               animation: _hoverAnimation,
               builder: (context, child) {
@@ -119,7 +102,8 @@ Widget build(BuildContext context) => Scaffold(
                   offset: Offset(0, _hoverAnimation.value), // Vertical hover effect
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: "Patient's full name",
+                      hintText: "patient's credentials",
+                      
                     ),
                   ),
                 );
@@ -143,28 +127,17 @@ Widget build(BuildContext context) => Scaffold(
             const SizedBox(height: 32),
             ElevatedButton(
             onPressed: (){
-              //* later a login framework will be used
               print('Button pressed!');
               }, 
             style: OutlinedButton.styleFrom(
               // change button background color
-              backgroundColor:  Color.fromARGB(255, 240, 244, 11),
+              backgroundColor:  Color.fromARGB(255, 71, 120, 226),
+              
             ), 
-            child: const Text('Submit'),
-            ),
+            child: const Text('Submit'),  ),
           ],
         ),
       )
       )
       );
-  PopupMenuItem<MenuItem>buildItem(MenuItem item) => PopupMenuItem(
-    child: Row(
-      children: [
-        Icon(item.icon, color: Colors.black, size: 20), 
-        const SizedBox(width: 12),
-        Text(item.text), 
-        ],  
-  ),
-  );
-
 }  
