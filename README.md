@@ -1,16 +1,3 @@
-# Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
 # Medic Care Mobile Application  
 
 This is an indoor GPS (Global Position System) application designed for hospitals. It was specifically developed for intensive care unit (ICU) staff to help them transport patients in intensive care more easily and time-efficiently to their upcoming examinations.  
