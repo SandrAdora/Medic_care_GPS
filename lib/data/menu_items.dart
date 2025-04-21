@@ -21,8 +21,8 @@ class MenuItems{
 
   //* delete input 
   static const itemDelete = MenuItem(
-    text: 'delete input',
-    icon: Icons.delete,
+    text: 'Reset',
+    icon: Icons.cancel,
   );
 
 //* Sign Out

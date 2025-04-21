@@ -96,7 +96,7 @@ Widget build(BuildContext context) => Scaffold(
     decoration: const BoxDecoration(
       image: DecorationImage(
         image: NetworkImage(
-          'https://e1.pxfuel.com/desktop-wallpaper/293/285/desktop-wallpaper-fade-color-for-android-color-fade.jpg'
+          'https://i0.wp.com/www.aftvnews.com/wp-content/uploads/2015/04/wallpaper-material.png?w=1292&quality=100&ssl=1'
           ),
         fit: BoxFit.cover,
       )
@@ -106,7 +106,12 @@ Widget build(BuildContext context) => Scaffold(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(' Welcome to Medic Care GPS Mobile'),
+            Text(
+              ' Welcome to Medic Care GPS', 
+              style: TextStyle(fontSize: 20.0),
+
+
+            ),
             AnimatedBuilder(
               animation: _hoverAnimation,
               builder: (context, child) {
@@ -114,7 +119,7 @@ Widget build(BuildContext context) => Scaffold(
                   offset: Offset(0, _hoverAnimation.value), // Vertical hover effect
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: "patient's credentials",
+                      hintText: "Patient's full name",
                     ),
                   ),
                 );
@@ -143,7 +148,7 @@ Widget build(BuildContext context) => Scaffold(
               }, 
             style: OutlinedButton.styleFrom(
               // change button background color
-              backgroundColor:  Color.fromARGB(255, 71, 120, 226),
+              backgroundColor:  Color.fromARGB(255, 240, 244, 11),
             ), 
             child: const Text('Submit'),
             ),
@@ -152,8 +157,14 @@ Widget build(BuildContext context) => Scaffold(
       )
       )
       );
+  PopupMenuItem<MenuItem>buildItem(MenuItem item) => PopupMenuItem(
+    child: Row(
+      children: [
+        Icon(item.icon, color: Colors.black, size: 20), 
+        const SizedBox(width: 12),
+        Text(item.text), 
+        ],  
+  ),
+  );
 
 }  
-PopupMenuItem<MenuItem>buildItem(MenuItem item) => PopupMenuItem(
-  child: Text(item.text),
-  );
