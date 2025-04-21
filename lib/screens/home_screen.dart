@@ -83,18 +83,21 @@ Widget build(BuildContext context) => Scaffold(
     centerTitle: true,
     actions: [
       PopupMenuButton<MenuItem>(
-        itemBuilder: (context) =>[
-          ...MenuItems.itemsFirst.map(buildItem).toList(),
-        ],
-      ),
-    ],
+      itemBuilder: (context) =>[
+        ...MenuItems.itemsFirst.map(buildItem).toList(),
+      ],
+    ),
+  ],
+
   ),
   body: Container( //* Setting background image
     alignment: Alignment.center, 
     padding: const EdgeInsets.all(32), 
     decoration: const BoxDecoration(
       image: DecorationImage(
-        image: AssetImage('assets/images/background_homepage.jpg'),
+        image: NetworkImage(
+          'https://e1.pxfuel.com/desktop-wallpaper/293/285/desktop-wallpaper-fade-color-for-android-color-fade.jpg'
+          ),
         fit: BoxFit.cover,
       )
       ),
@@ -112,7 +115,6 @@ Widget build(BuildContext context) => Scaffold(
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: "patient's credentials",
-                      
                     ),
                   ),
                 );
@@ -136,20 +138,22 @@ Widget build(BuildContext context) => Scaffold(
             const SizedBox(height: 32),
             ElevatedButton(
             onPressed: (){
+              //* later a login framework will be used
               print('Button pressed!');
               }, 
             style: OutlinedButton.styleFrom(
               // change button background color
               backgroundColor:  Color.fromARGB(255, 71, 120, 226),
-              
             ), 
-            child: const Text('Submit'),  ),
+            child: const Text('Submit'),
+            ),
           ],
         ),
       )
       )
       );
+
+}  
 PopupMenuItem<MenuItem>buildItem(MenuItem item) => PopupMenuItem(
   child: Text(item.text),
   );
-}  

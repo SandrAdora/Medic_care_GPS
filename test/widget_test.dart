@@ -8,13 +8,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:medic_care_gps/main.dart';
+//import 'package:medic_care_gps/main.dart';
 import 'package:medic_care_gps/screens/home_screen.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MedicareGPSp());
+    await tester.pumpWidget(const MedicareGPS());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
