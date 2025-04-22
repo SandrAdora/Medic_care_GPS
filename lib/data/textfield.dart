@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 //* Textfield 
 class NewTextfield extends StatelessWidget{
-  final controller; // Used to accsess what the user typed in the text field
+  final controller_; // Used to accsess what the user typed in the text field
   final String hintText; 
   final bool obscureText; // Hides input used for passwords
   const NewTextfield({super.key, 
-  required this.controller,
+  required this.controller_,
   required this.hintText, 
   required this.obscureText}); 
 
@@ -16,7 +16,7 @@ class NewTextfield extends StatelessWidget{
     return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0), 
                 child: TextField(
-                  controller: controller,
+                  controller: controller_,
                   obscureText: obscureText, 
                   decoration: InputDecoration(
                     enabledBorder: const OutlineInputBorder(
@@ -28,6 +28,7 @@ class NewTextfield extends StatelessWidget{
                     fillColor: Colors.white12,
                     filled: true,
                     hintText: hintText, 
+                    hintStyle: TextStyle(color: Colors.grey)
                   ),
                 ),
               );

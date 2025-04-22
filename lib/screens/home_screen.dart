@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:medic_care_gps/data/menu_items.dart';
 import 'package:medic_care_gps/models/menu_item.dart';
 import 'package:medic_care_gps/data/textfield.dart';
+import 'package:medic_care_gps/data/sign_in_button.dart';
+import 'package:medic_care_gps/data/square_title.dart';
 
 class MedicareGPS extends StatelessWidget{
 
   // initialize the constructor
-  MedicareGPS({super.key});
+  const MedicareGPS({super.key});
   // Over write funtion from super class
 @override
   Widget build(BuildContext context) {
@@ -21,10 +23,14 @@ class MedicareGPS extends StatelessWidget{
 class HomePage extends StatelessWidget{
   HomePage({super.key});
 
-  // text edigitn controllers 
+  // text editing controllers 
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
   
+  // sign user in when submit button is pressed 
+  void signUserIn(){
+    print('User is signed in');
+  }
   @override 
   Widget build(BuildContext context){
     return Scaffold(
@@ -32,7 +38,8 @@ class HomePage extends StatelessWidget{
       body: SafeArea(
         child: Center(
           child:  Column( 
-            children: const [
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
               const SizedBox(height:50),
 
               //logo 
@@ -41,10 +48,10 @@ class HomePage extends StatelessWidget{
               ),
               const SizedBox(height: 50),
               //Message 
-              Text(
+              const Text(
                 'Welcome to Medicare GPS Mobile', 
                 style: TextStyle(
-                  color: Colors.blueGrey,
+                  color: Colors.grey,
                   fontSize: 16,
                 ),
               ),
@@ -52,20 +59,80 @@ class HomePage extends StatelessWidget{
 
               // patients full name
               NewTextfield(
-                controller: usernameController,
+                controller_: usernameController,
                 hintText: 'Full name of the patient',
                 obscureText: false,
 
               ),
+
               const SizedBox(height: 10),
               // Password 
               NewTextfield(
-                controller: passwordController, 
+                controller_: passwordController, 
                 hintText: 'Password',
                 obscureText: true,
               ),
-        
+              const SizedBox(height: 10,), 
+              // forgot password
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0), 
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SignInButton(
+                onTap: signUserIn,
+              ),
 
+              const SizedBox(height: 50),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              // Divider for logos 
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Divider(
+                  thickness: 0.5,
+                  color: Colors.grey[400],
+                  ),
+                ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child:  Text(
+                'Continue with',
+                style: TextStyle(color: Colors.grey[700]),
+                ),
+              ),
+              Expanded(
+                child: Divider(
+                  thickness: 0.5, 
+                  color: Colors.grey[400],                ),
+              ),
+             
+              ],
+              ),
+          ),
+          // Google and apploe logo 
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SquareTile(imagePath: 'lib/assets/images/google.jpg'),
+
+              const SizedBox(width:10),
+              SquareTile(imagePath: 'lib/assets/images/apple.jpg'),
+
+            ],
+          ),
+          
 
             ],
       ),
