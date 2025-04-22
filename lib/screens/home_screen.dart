@@ -88,6 +88,8 @@ class HomePage extends StatelessWidget{
                   ],
                 ),
               ),
+              const SizedBox(height: 20,),
+
               SignInButton(
                 onTap: signUserIn,
               ),
@@ -116,8 +118,7 @@ class HomePage extends StatelessWidget{
                 child: Divider(
                   thickness: 0.5, 
                   color: Colors.grey[400],                ),
-              ),
-             
+              ), 
               ],
               ),
           ),
