@@ -14,25 +14,42 @@ class _TextfieldNamesState extends State<TextFieldForNames>{
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>(); 
 
   @override 
-  Widget build(BuildContext context){
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          TextFormField( 
-            decoration: const InputDecoration(hintText: 'Enter full name of the patient'),
-            validator:(String? value){
-              if (value == null || value.isEmpty){
-                return 'Please enter full name of the patient';
+  Widget build(BuildContext context) => Center (
+    child: ListView(  
+      padding: EdgeInsets.all(32), 
+      children: [
+        buildTextField(), 
+        const SizedBox(height: 24),
+                  ElevatedButton(
+            onPressed: () {
+              // Validate the form and proceed
+              if (_formKey.currentState?.validate() ?? false) {
+                print("Form is valid. Proceeding...");
+              } else {
+                print("Form is invalid.");
               }
-              return null;
             },
+            child: const Text('Submit'),
           ),
-        ]
-        )
-      );
-  }
+      ],
+    )
+
+  );
+  
+  // Crete the Textfields 
+  Widget buildTextField() => TextField(
+    
+    decoration: InputDecoration( 
+      hintText: 'Max Mustermann',
+      labelText: 'Full name',
+      border: OutlineInputBorder(),
+    ),
+    keyboardType: TextInputType.name,
+    
+
+    textInputAction: TextInputAction.done,
+
+  );
 
 }
 
