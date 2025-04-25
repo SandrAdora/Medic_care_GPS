@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:medic_care_gps/data/menu_items.dart';
-import 'package:medic_care_gps/models/menu_item.dart';
 import 'package:medic_care_gps/data/textfield.dart';
 import 'package:medic_care_gps/data/sign_in_button.dart';
 import 'package:medic_care_gps/data/square_title.dart';
+import 'package:medic_care_gps/data/navigation_drawer.dart'; 
 
 class MedicareGPS extends StatelessWidget{
 
@@ -50,6 +49,7 @@ class HomePage extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: Colors.grey[300],
+      drawer: const NavigationDrawer_(),
       body: SafeArea(
         child: Center(
           child:  Column( 
